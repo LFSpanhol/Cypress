@@ -2,6 +2,6 @@
 
 export const ELEMENTS = {
     email: '#email',
-    senha: '#senha',
-    buttonLogar: '.btn'
+    password: '#senha',
+    buttonSingUp: '.btn'
 }

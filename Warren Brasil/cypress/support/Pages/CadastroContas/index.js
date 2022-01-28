@@ -13,9 +13,9 @@ class CadastroConta {
 
     adicionarConta() {
 
-        cy.get(el.contas).click({ force: true })
-        cy.get(el.nome).type(vl.nomeConta);
-        cy.get(el.buttonCadastrar).click({ force: true });
+        cy.get(el.account).click({ force: true })
+        cy.get(el.name).type(vl.account.accountName);
+        cy.get(el.buttonSalve).click({ force: true });
 
     }
 

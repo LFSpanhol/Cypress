@@ -1,9 +1,25 @@
 /// <reference types="cypress"/>
 
-export const VALUES ={
-    nome: 'LFSpanhol1',
-    email: 'testLuiz50@test.com.br',
-    senha: '!@#$%¨teste!@#$%',
-    nomeConta: 'Conta a pagar referente a Luz',
-    novoNomeConta: 'Conta de Agua'
+export const VALUES = {
+    user: {
+        username: 'LFSpanhol1',
+        email: 'lfspanhol@test.com',
+        password: '123@!@#$%abc'
+    },
+    account: {
+        accountName: 'Conta de energia',
+        alterAccountName: 'Conta de energia eletrica',
+        alert: {
+            alertSuccessAlter: 'Conta alterada com sucesso!',
+            alertSucessRemoved: 'Conta removida com sucesso!'
+        }
+    },
+    doc: {
+        title: 'Seu Barriga - Contas'
+    },
+    variablesDoc: {
+        tableName: 'tabelaContas',
+        td: 'td',
+        tr: 'tr'
+    }
 }

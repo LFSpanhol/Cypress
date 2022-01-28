@@ -3,20 +3,19 @@
 import CadastroLogin from "../support/Pages/CadastroLogin";
 import Login from "../support/Pages/Login";
 import CadastroContas from "../support/Pages/CadastroContas";
-import ListarContas from "../support/Pages/ListarContas"
 import FuncaoConta from "../support/Pages/FuncaoConta"
 
 
 describe('Warren Brasi', () => {
 
-    it('1: Login - Usuário não cadastrado', () => {
+    it.skip('1: Login - Usuário não cadastrado', () => {
 
         Login.LoginSystema();
         Login.preencherLogin();
         Login.validarLogin_UsuarioNaoCadastrado();
     })
 
-    it('2: Cadastro de Usuário: Com Sucesso', () => {
+    it.skip('2: Cadastro de Usuário: Com Sucesso', () => {
 
         CadastroLogin.acessarCadastroLogin();
         CadastroLogin.preencherCadastroLogin();
@@ -24,7 +23,7 @@ describe('Warren Brasi', () => {
 
     })
 
-    it('3:Cadastro de Usuário: E-mail já cadastrado', () => {
+    it.skip('3:Cadastro de Usuário: E-mail já cadastrado', () => {
 
         CadastroLogin.acessarCadastroLogin();
         CadastroLogin.preencherCadastroLogin();
@@ -32,14 +31,14 @@ describe('Warren Brasi', () => {
 
     })
 
-    it('4: Login', () => {
+    it.skip('4: Login', () => {
 
         Login.LoginSystema();
         Login.preencherLogin();
         Login.validarLogin_LoginRealizadoComSucesso();
     })
 
-    it('5: Conta', () => {
+    it('5: Adicionar Conta', () => {
 
         Login.LoginSystema();
         Login.preencherLogin();
@@ -52,14 +51,25 @@ describe('Warren Brasi', () => {
 
     })
 
-    it('6: Listar, Editar e Excluir Conta', () => {
+    it('6: Alterar nome da Conta', () => {
 
         Login.LoginSystema();
         Login.preencherLogin();
-        ListarContas.acessarListaConta();
-        ListarContas.acessarListagemConta();
-        FuncaoConta.editar();
-        FuncaoConta.excluir();
 
+        FuncaoConta.acessarConta();
+        FuncaoConta.editarConta();
+        FuncaoConta.validarEditarConta();
+
+    })
+
+    it('7: Remover conta', () =>{
+
+        Login.LoginSystema();
+        Login.preencherLogin();
+
+        FuncaoConta.acessarConta();
+        FuncaoConta.removerConta();
+        FuncaoConta.validarRemoverConta();
+        
     })
 })

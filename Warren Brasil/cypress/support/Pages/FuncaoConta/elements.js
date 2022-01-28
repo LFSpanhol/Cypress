@@ -2,9 +2,8 @@
 
 export const ELEMENTS = {
 
-    editarConta: '[href="/editarConta?id=1039881"] > .glyphicon',
-    nome: 'nome',
-    buttonSalvar: '.btn',
-    excluirConta: ''
+    name: '#nome',
+    buttonSalve: '.btn',
+    alert: '.alert'
 
 }

@@ -11,9 +11,9 @@ class Login{
 
     preencherLogin(){
 
-        cy.get(el.email).type(vl.email);
-        cy.get(el.senha).type(vl.senha);
-        cy.get('.btn').click({force: true});
+        cy.get(el.email).type(vl.user.email);
+        cy.get(el.password).type(vl.user.password);
+        cy.get(el.buttonSingUp).click({force: true});
 
     }
 

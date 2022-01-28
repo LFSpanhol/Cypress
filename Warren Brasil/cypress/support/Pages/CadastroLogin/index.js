@@ -10,11 +10,12 @@ class CadastraLogin {
     }
 
     preencherCadastroLogin() {
-        cy.get(el.nome).type(vl.nome);
-        cy.get(el.email).type(vl.email);
-        cy.get(el.senha).type(vl.senha);
 
-        cy.get(el.buttonCadastrar).click({ force: true })
+        cy.get(el.name).type(vl.user.name);
+        cy.get(el.email).type(vl.user.email);
+        cy.get(el.password).type(vl.user.password);
+        cy.get(el.buttonSalve).click({ force: true });
+
     }
 
     validarEmail_CadastroRealizadoComSucesso() {

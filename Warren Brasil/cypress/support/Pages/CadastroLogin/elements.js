@@ -1,8 +1,8 @@
 /// <reference types="cypress"/>
 
 export const ELEMENTS = {
-    nome: '#nome',
+    name: '#nome',
     email: '#email',
-    senha: '#senha',
-    buttonCadastrar: '.btn'
+    password: '#senha',
+    buttonSalve: '.btn'
 }
