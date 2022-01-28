@@ -8,13 +8,13 @@ import FuncaoConta from "../support/Pages/FuncaoConta"
 
 describe('Warren Brasi', () => {
 
-    it.skip('1: Usuário não existe para realizar o login', () => {
+    it('1: Usuário não existe para realizar o login', () => {
 
         Login.LoginSystema();
-        Login.preencherLonginUsuarioNaoExiste();
+        Login.preencherLongin_UsuarioNaoExiste();
         Login.validarLogin_UsuarioNaoCadastrado();
 
-    })
+    });
 
     it.skip('2: Cadastro de Usuário: Com Sucesso', () => {
 
