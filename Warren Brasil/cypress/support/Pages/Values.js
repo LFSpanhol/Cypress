@@ -2,10 +2,16 @@
 
 export const VALUES = {
     user: {
-        username: 'LFSpanhol1',
-        email: 'lfspanhol@test.com',
-        emailNaoExiste: 'emailnaocadastrado@test.com',
-        password: '123@!@#$%abc'
+
+        username: 'LFSpanhol',
+        password: '123@!@#$%abc',
+
+        email: {
+            emailNew:'lfspanhol1@warrenbrasil.com',
+            emailNotExist: 'emailnaocadastrado@test.com',
+            emailExist: 'lfspanhol@warrenbrasil.com'
+        }
+
     },
     account: {
         accountName: 'Conta de energia',

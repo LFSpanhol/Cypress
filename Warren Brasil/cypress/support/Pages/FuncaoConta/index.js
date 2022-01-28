@@ -5,11 +5,11 @@ const vl = require('../Values').VALUES;
 
 class FuncaoConta {
 
-    acessarConta() {
+    AccessListAcount() {
         cy.visit('/contas')
     }
 
-    editarConta() {
+    EditAccount() {
 
         cy.document().then(doc => {
 
@@ -29,7 +29,7 @@ class FuncaoConta {
 
     }
 
-    removerConta() {
+    RemoveAccount() {
 
         cy.document().then(doc => {
             var getRemoveAccount = doc.getElementById(vl.variablesDoc.tableName);
@@ -43,7 +43,7 @@ class FuncaoConta {
         })
     }
 
-    validarEditarConta() {
+    ValidatedAlterEditInformation() {
 
         cy.document().then(doc => {
 
@@ -63,7 +63,7 @@ class FuncaoConta {
 
     }
 
-    validarRemoverConta(){
+    ValidatedRemoveAccount(){
         
         cy.get(el.alert).should('be.visible');
         cy.get(el.alert).should('have.text', vl.account.alert.alertSucessRemoved)

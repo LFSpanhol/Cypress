@@ -5,20 +5,29 @@ const vl = require('.././Values').VALUES;
 
 class CadastraLogin {
 
-    acessarCadastroLogin() {
+    AccessRegistrationLogin() {
         cy.visit('/cadastro');
     }
 
-    preencherCadastroLogin() {
+    FillRegistrationLogin() {
 
-        cy.get(el.name).type(vl.user.name);
-        cy.get(el.email).type(vl.user.email);
+        cy.get(el.name).type(vl.user.username);
+        cy.get(el.email).type(vl.user.email.emailNew);
         cy.get(el.password).type(vl.user.password);
         cy.get(el.buttonSalve).click({ force: true });
 
     }
 
-    validarEmail_CadastroRealizadoComSucesso() {
+    FillRegistrationLoginEmailExist() {
+
+        cy.get(el.name).type(vl.user.username);
+        cy.get(el.email).type(vl.user.email.emailExist);
+        cy.get(el.password).type(vl.user.password);
+        cy.get(el.buttonSalve).click({ force: true });
+
+    }
+
+    ValidatedRegistrationLoginSucess() {
         cy.wait(500).then(() => {
             cy.get('.alert').should((response) => {
                 expect(response).is.not.null
@@ -29,7 +38,7 @@ class CadastraLogin {
         })
     }
 
-    validarEmail_CadastroNãoRealizadoEmailJaCadastrado() {
+    ValidatedRegistrationLoginNotSucess() {
         cy.wait(500).then(() => {
             cy.get('.alert').should((response) => {
                 expect(response).is.not.null

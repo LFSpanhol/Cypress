@@ -3,44 +3,54 @@
 const el = require('./elements').ELEMENTS;
 const vl = require('.././Values').VALUES;
 
-class Login{
+class Login {
 
-    LoginSystema(){
+    SystemLogin() {
         cy.visit('/Login')
     }
 
-    preencherLogin(){
+    FillLogin() {
 
-        cy.get(el.email).type(vl.user.email);
+        cy.get(el.email).type(vl.user.email.emailExist);
         cy.get(el.password).type(vl.user.password);
-        cy.get(el.buttonSingUp).click({force: true});
+        cy.get(el.buttonSingUp).click({ force: true });
 
     }
 
-    preencherLongin_UsuarioNaoExiste(){
-        cy.get(el.email).type(vl.user.emailNaoExiste);
+    FillLoginEmailNotExist() {
+        cy.get(el.email).type(vl.user.email.emailNotExist);
         cy.get(el.password).type(vl.user.password);
-        cy.get(el.buttonSingUp).click({force: true});
+        cy.get(el.buttonSingUp).click({ force: true });
     }
 
-    validarLogin_LoginRealizadoComSucesso(){
+    ValidateLoginSucess() {
 
         cy.wait(500).then(() => {
             cy.get('.alert').should((response) => {
                 expect(response).is.not.null
                 expect(response).not.have.class('alert alert-danger')
                 expect(response).have.class('alert alert-success')
-                expect(response).contain(vl.nome)
             })
+
+            cy.document().then(doc => {
+                var welcome = doc.getElementsByClassName('body-index')[0];
+                    welcome = welcome.getElementsByClassName('alert alert-success')[0].innerHTML;
+                console.log(welcome)
+                const comp = 'Bem vindo, ' + vl.user.username + '!';
+                console.log(comp)
+                expect(welcome).be.eq(comp)
+
+            })
+
             cy.get('.footer > span').should((response) => {
                 expect(response).is.not.null
                 expect(response).have.text('Seu Barriga. Nunca mais esqueça de pagar o aluguel.reset')
-                
+
             })
         })
     }
 
-    validarLogin_UsuarioNaoCadastrado(){
+    ValidateLoginNotSucess() {
 
         cy.wait(500).then(() => {
             cy.get('.alert').should((response) => {

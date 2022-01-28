@@ -5,13 +5,13 @@ const vl = require('.././Values').VALUES;
 
 class CadastroConta {
 
-    acessarCadastroContas() {
+    AccessAddAccount() {
 
         cy.visit('/addConta');
 
     }
 
-    adicionarConta() {
+    addNewAccount() {
 
         cy.get(el.account).click({ force: true })
         cy.get(el.name).type(vl.account.accountName);
@@ -19,7 +19,7 @@ class CadastroConta {
 
     }
 
-    validarCadastroConta() {
+    ValidatedRegistrationAccountSucess() {
 
         cy.wait(500).then(() => {
             cy.get('.alert').should((response) => {
@@ -31,7 +31,7 @@ class CadastroConta {
         })
     }
 
-    contaJaCadastrada() {
+    ValidateAccountAlreadyRegistered() {
 
         cy.wait(500).then(() => {
             cy.get('.alert').should((response) => {

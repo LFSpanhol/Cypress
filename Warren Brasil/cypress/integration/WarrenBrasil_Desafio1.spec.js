@@ -8,69 +8,92 @@ import FuncaoConta from "../support/Pages/FuncaoConta"
 
 describe('Warren Brasi', () => {
 
-    it('1: Usuário não existe para realizar o login', () => {
+    it('Step Test 1: user not exist login', () => {
 
-        Login.LoginSystema();
-        Login.preencherLongin_UsuarioNaoExiste();
-        Login.validarLogin_UsuarioNaoCadastrado();
+        Login.SystemLogin();
+        Login.FillLoginEmailNotExist();
+        Login.ValidateLoginNotSucess();
 
     });
 
-    it.skip('2: Cadastro de Usuário: Com Sucesso', () => {
+    it('Step Test 2: The email is already registered', () => {
 
-        CadastroLogin.acessarCadastroLogin();
-        CadastroLogin.preencherCadastroLogin();
-        CadastroLogin.validarEmail_CadastroRealizadoComSucesso();
+        CadastroLogin.AccessRegistrationLogin();
+        CadastroLogin.FillRegistrationLoginEmailExist();
+        CadastroLogin.ValidatedRegistrationLoginNotSucess();
 
-    })
+    });
 
-    it.skip('3:Cadastro de Usuário: E-mail já cadastrado', () => {
+    it.skip('Step Test 3: Registration login with sucess', () => {
 
-        CadastroLogin.acessarCadastroLogin();
-        CadastroLogin.preencherCadastroLogin();
-        CadastroLogin.validarEmail_CadastroNãoRealizadoEmailJaCadastrado();
+        CadastroLogin.AccessRegistrationLogin();
+        CadastroLogin.FillRegistrationLogin();
+        CadastroLogin.ValidatedRegistrationLoginSucess();
 
-    })
+    });
 
-    it.skip('4: Login', () => {
+    it('Step Test 4: Access login with sucesss', () => {
 
-        Login.LoginSystema();
-        Login.preencherLogin();
-        Login.validarLogin_LoginRealizadoComSucesso();
-    })
+        Login.SystemLogin();
+        Login.FillLogin();
+        Login.ValidateLoginSucess();
 
-    it('5: Adicionar Conta', () => {
+    });
 
-        Login.LoginSystema();
-        Login.preencherLogin();
-        CadastroContas.acessarCadastroContas();
-        CadastroContas.adicionarConta();
-        CadastroContas.validarCadastroConta();
-        CadastroContas.acessarCadastroContas();
-        CadastroContas.adicionarConta();
-        CadastroContas.contaJaCadastrada();
+    it('Step Test 5: Add new account', () => {
 
-    })
+        Login.SystemLogin();
+        Login.FillLogin();
 
-    it('6: Alterar nome da Conta', () => {
+        FuncaoConta.AccessListAcount();
+        FuncaoConta.RemoveAccount();
 
-        Login.LoginSystema();
-        Login.preencherLogin();
+        CadastroContas.AccessAddAccount();
+        CadastroContas.addNewAccount();
+        CadastroContas.ValidatedRegistrationAccountSucess();
 
-        FuncaoConta.acessarConta();
-        FuncaoConta.editarConta();
-        FuncaoConta.validarEditarConta();
+    });
 
-    })
+    it('Step Test 6: Validate Account Already Registered', () => {
 
-    it('7: Remover conta', () =>{
+        Login.SystemLogin();
+        Login.FillLogin();       
 
-        Login.LoginSystema();
-        Login.preencherLogin();
+        CadastroContas.AccessAddAccount();   
+        CadastroContas.addNewAccount();
+        CadastroContas.ValidateAccountAlreadyRegistered();
 
-        FuncaoConta.acessarConta();
-        FuncaoConta.removerConta();
-        FuncaoConta.validarRemoverConta();
+    });
+
+    it('Step Test 7: Change account name.', () => {
+
+        Login.SystemLogin();
+        Login.FillLogin();
+
+        FuncaoConta.AccessListAcount();
+        FuncaoConta.EditAccount();
+        FuncaoConta.ValidatedAlterEditInformation();
+
+    });
+
+    it('Step Test 7: Remove registration account', () => {
+
+        Login.SystemLogin();
+        Login.FillLogin();
+
+        FuncaoConta.AccessListAcount();
+        FuncaoConta.RemoveAccount();
+        FuncaoConta.ValidatedRemoveAccount();
+
+    });
+
+    it('Step Test 8: Registration monthly movement', () => {
         
+        Login.SystemLogin();
+        Login.FillLogin();
+
+        //Criar Class para acessar
+        //Criar Class para cadastrar
+        //Criar Class para validar
     })
 })
