@@ -4,6 +4,7 @@ export const VALUES = {
     user: {
         username: 'LFSpanhol1',
         email: 'lfspanhol@test.com',
+        emailNaoExiste: 'emailnaocadastrado@test.com',
         password: '123@!@#$%abc'
     },
     account: {

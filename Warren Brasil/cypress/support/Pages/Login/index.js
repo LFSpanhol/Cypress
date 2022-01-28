@@ -17,6 +17,12 @@ class Login{
 
     }
 
+    preencherLongin_UsuarioNaoExiste(){
+        cy.get(el.email).type(vl.user.emailNaoExiste);
+        cy.get(el.password).type(vl.user.password);
+        cy.get(el.buttonSingUp).click({force: true});
+    }
+
     validarLogin_LoginRealizadoComSucesso(){
 
         cy.wait(500).then(() => {
