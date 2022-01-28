@@ -5,7 +5,6 @@ import Login from "../support/Pages/Login";
 import CadastroContas from "../support/Pages/CadastroContas";
 import FuncaoConta from "../support/Pages/FuncaoConta"
 
-
 describe('Warren Brasi', () => {
 
     it('Step Test 1: user not exist login', () => {
@@ -54,7 +53,7 @@ describe('Warren Brasi', () => {
 
     });
 
-    it('Step Test 6: Validate Account Already Registered', () => {
+    it.skip('Step Test 6: Validate Account Already Registered', () => {
 
         Login.SystemLogin();
         Login.FillLogin();       
@@ -81,9 +80,17 @@ describe('Warren Brasi', () => {
         Login.SystemLogin();
         Login.FillLogin();
 
+        var nameAccount = 'Testes'
+
+        CadastroContas.AccessAddAccount();
+        CadastroContas.addNewAccount(nameAccount);
+
         FuncaoConta.AccessListAcount();
         FuncaoConta.RemoveAccount();
         FuncaoConta.ValidatedRemoveAccount();
+
+        CadastroContas.AccessAddAccount();
+        CadastroContas.addNewAccount();
 
     });
 
