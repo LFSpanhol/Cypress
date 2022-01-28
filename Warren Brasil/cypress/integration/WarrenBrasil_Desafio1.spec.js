@@ -76,7 +76,7 @@ describe('Warren Brasi', () => {
 
     });
 
-    it('Step Test 7: Remove registration account', () => {
+    it('Step Test 8: Remove registration account', () => {
 
         Login.SystemLogin();
         Login.FillLogin();
@@ -87,7 +87,7 @@ describe('Warren Brasi', () => {
 
     });
 
-    it('Step Test 8: Registration monthly movement', () => {
+    it('Step Test 9: Registration monthly movement', () => {
         
         Login.SystemLogin();
         Login.FillLogin();
@@ -95,5 +95,16 @@ describe('Warren Brasi', () => {
         //Criar Class para acessar
         //Criar Class para cadastrar
         //Criar Class para validar
+    })
+
+    it('Step Test 10: View report monthly summary', () => {
+
+        Login.SystemLogin();
+        Login.FillLogin();
+
+        //Criar Class para acessar
+        //Cadastra algumas movimentações e contas????
+        //Criar Class para validar
+
     })
 })
