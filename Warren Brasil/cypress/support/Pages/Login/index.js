@@ -35,10 +35,11 @@ class Login {
             cy.document().then(doc => {
                 var welcome = doc.getElementsByClassName('body-index')[0];
                     welcome = welcome.getElementsByClassName('alert alert-success')[0].innerHTML;
-                console.log(welcome)
-                const comp = 'Bem vindo, ' + vl.user.username + '!';
-                console.log(comp)
-                expect(welcome).be.eq(comp)
+                
+                var CompareWelcome = 'Bem vindo, ' + vl.user.username + '!';
+                
+                console.log('Apresentação do valor para comparar: ' , CompareWelcome)
+                expect(welcome).be.eq(CompareWelcome)
 
             })
 
